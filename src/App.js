@@ -12,29 +12,17 @@ function App() {
       const response = await fetch(url)
       if(response.ok){
         const result = await response.json();
-        setSites(result.Site)
+        setSites(result)
         console.log(result)
-        setSitesCopy(result.Site)
+        setSitesCopy(result)
       }
     }
     fetchSite()
   }, [])
+  console.log(sites.length)
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {sites.length}
     </div>
   );
 }
