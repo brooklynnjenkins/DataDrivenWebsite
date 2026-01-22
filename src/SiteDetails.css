@@ -1,0 +1,23 @@
+.siteBox h2{
+    color:rgb(59, 101, 165);
+    font-size: 23pt;
+}
+#cords{
+    font-weight: bold;
+}
+.siteBox img{
+    width: 40%;
+}
+.siteBox{
+    background-color: rgb(10, 11, 71);
+    padding: 60px 100px;
+    padding-bottom: 100px;
+    height: 150%;
+}
+.siteBox div{
+    background-color: white;
+    padding: 25px;
+}
+#noID{
+    margin-top: 220px;
+}

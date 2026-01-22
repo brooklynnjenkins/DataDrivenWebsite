@@ -6,11 +6,15 @@ import "./List.css"
 function List(props){
     
 
-return(
+return( <>
+    
+    <header>
+        <h1>Boyle County Sites</h1>
+      </header>
     <ul>
         {props.sitesCopy.map(site => <ListItem key={site.SiteID} site ={site} />)}
     </ul>
-);
+</>);
 
 }
 
