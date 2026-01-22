@@ -5,7 +5,7 @@ ul{
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    margin: 5% 10%;
+    margin: 2% 10%;
     gap: 50px;
 }
 li{
@@ -38,7 +38,7 @@ a{
     color: rgb(59, 101, 165);
 }
 header{
-    background-color: rgb(172, 205, 255);
+    background-image: linear-gradient(rgb(172, 205, 255), white);
     height: 150px;
     margin:0px;
 }
