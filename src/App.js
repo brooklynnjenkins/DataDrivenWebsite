@@ -1,6 +1,9 @@
 import logo from './logo.svg';
 import './App.css';
 import {useEffect, useState} from "react";
+import List from "./List.js"
+import {BrowserRouter, Route, Routes, Link} from "react-router-dom";
+import SiteDetails from "./SiteDetails.js"
 
 function App() {
   const [sites, setSites] = useState([{}]);
@@ -22,7 +25,14 @@ function App() {
   console.log(sites.length)
   return (
     <div className="App">
-      {sites.length}
+      <h1>Boyle County Sites</h1>
+      <BrowserRouter>
+        <Routes>
+            <Route path = "/" element={<List sites={sites} setSitesCopy = {setSitesCopy} sitesCopy ={sitesCopy}/>}/>
+            <Route path = "/site/:SiteID" element={<SiteDetails sites = {sites} />}/>
+        </Routes>
+      </BrowserRouter>
+      <List sites={sites} setSitesCopy = {setSitesCopy} sitesCopy ={sitesCopy}/>
     </div>
   );
 }

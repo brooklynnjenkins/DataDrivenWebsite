@@ -1,0 +1,36 @@
+ul{
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 10%;
+    gap: 50px;
+}
+li{
+    display: flex;
+    flex-direction: row;
+    text-align: left;
+    flex-wrap: wrap;
+    width: 80%;
+    gap: 50px;
+    justify-content: center;
+
+}
+li section{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    width: 50%;
+}
+img{
+    width: 450px;
+    height: auto;
+}
+p{
+    font-size: 16pt;
+}
+h2{
+
+}
