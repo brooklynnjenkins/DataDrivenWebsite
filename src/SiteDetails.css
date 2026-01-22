@@ -9,10 +9,11 @@
     width: 40%;
 }
 .siteBox{
-    background-color: rgb(10, 11, 71);
+    background-image: url('/public/imgs/cloud.jpg');
+    background-size: 100% 120%;
     padding: 60px 100px;
     padding-bottom: 100px;
-    height: 150%;
+    height: 775px
 }
 .siteBox div{
     background-color: white;
@@ -20,4 +21,7 @@
 }
 #noID{
     margin-top: 220px;
+}
+.siteBox p{
+    padding: 0px 5%;
 }

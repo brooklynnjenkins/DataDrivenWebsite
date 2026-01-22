@@ -10,10 +10,9 @@ function ListItem(props){
             <section>
                 <h2>
                     <Link to={`/site/${props.site.SiteID}`}> 
-                        {props.site.Site}
+                        {props.site.Site} 
                     </Link>     
                 </h2>
-                <p>{props.site.Description}</p>
             </section>
         </li>
     );

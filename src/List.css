@@ -1,28 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Delius&display=swap');
 ul{
     list-style-type: none;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
+    flex-direction: row;
     margin: 2% 10%;
     gap: 50px;
 }
 li{
     display: flex;
-    flex-direction: row;
-    text-align: left;
+    flex-direction: column;
+    text-align: center;
     flex-wrap: wrap;
     width: 80%;
+    flex-basis: 25%;
     gap: 50px;
     justify-content: center;
 
-}
-li section{
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-    width: 50%;
 }
 img{
     width: 450px;
@@ -38,14 +34,28 @@ a{
     color: rgb(59, 101, 165);
 }
 header{
-    background-image: linear-gradient(rgb(172, 205, 255), white);
-    height: 150px;
+    background-color: rgb(59, 101, 165);
+    height: 200px;
     margin:0px;
 }
 h1{
     margin: 0px;
-    padding: 40px;
+    padding-top: 30px;
+    color: white;
+    font-family: 'Delius';
+    font-size: 35pt;
 }
 .App{
     background-color: white;
+}
+a:hover{
+    color: rgb(109, 172, 255);
+}
+#search{
+    width: 300px;
+    font-size: 12pt;
+}
+button{
+    width: 60px;
+    font-size: 12pt;
 }
