@@ -59,3 +59,11 @@ button{
     width: 60px;
     font-size: 12pt;
 }
+#ending{
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+#ending span{
+    font-size: 18pt;
+}
