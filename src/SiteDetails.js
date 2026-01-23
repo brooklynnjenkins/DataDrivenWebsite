@@ -1,34 +1,34 @@
 import React from "react";
 import {BrowserRouter, Route, Routes, Link, useParams} from "react-router-dom";
 import "./SiteDetails.css"
-import {useEffect, useState, localStorage} from "react";
+import {useEffect, useState} from "react";
 
 function SiteDetails(props){
     const {SiteID} = useParams()
     const site = props.sites.find(s=> s.SiteID == SiteID);
-    let favorites = [];
-    const currentFavorites = getFavorites();
-    console.log(currentFavorites);
+    const storedFavorites = localStorage.getItem('favorites');
+    const [favorites, setFavorites] = useState(storedFavorites? JSON.parse(storedFavorites) : []);
 
-    function saveFaves(){
+    useEffect(() => {
         localStorage.setItem('favorites', JSON.stringify(favorites));
-    }
-    function getFavorites(){
-        const favoritesString = localStorage.getItem('favorites');
-        if(favoritesString === null){
-            return "item not found";
+        console.log(localStorage)
+        if(site){
+            console.log(site.Site);
+        }else{
+            console.log("undefined");
+        }
+    }, [favorites]);
+    useEffect(() => {
+        const storedFavorites = localStorage.getItem('favorites');
+        console.log("hello", storedFavorites);
+        if(storedFavorites && storedFavorites !== 'undefined'){
+            const favoritesArray = JSON.parse(storedFavorites);
+            setFavorites(favoritesArray);
         }
         else{
-            return favoritesString ? JSON.parse(favoritesString) : [];
-        } 
-    }
-    function addFavorite(itemID){
-        const favorites = getFavorites();
-        if(!favorites.includes(itemID)){
-            favorites.push(itemID);
-            saveFaves(favorites);
+            setFavorites([]);
         }
-    }
+    }, []); 
     if(site) {
         return( <>
             <div class="siteBox">
@@ -38,8 +38,8 @@ function SiteDetails(props){
                     <p>{site.Description}</p>
                     <p id="cords">Latitude: {site.Latitude}, Longitude: {site.Longitude}</p>
                     <p id="ending">
-                        <Link onClick={saveFaves} to={`/`}>All Sites</Link> 
-                        <span type="button" onClick={addFavorite(site.Site)}>&#9733;</span>
+                        <Link to={`/`}>All Sites</Link> 
+                        <span onClick={() => setFavorites([...favorites, site.Site])} type="button">&#9733;</span> 
                     </p>
                 </div>
             </div>

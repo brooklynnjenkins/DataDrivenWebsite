@@ -2,7 +2,6 @@ import React from "react";
 import {BrowserRouter, Route, Routes, Link, useParams} from "react-router-dom";
 
 function ListItem(props){
-    console.log(props)
 
     return(
         <li>

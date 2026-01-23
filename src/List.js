@@ -2,6 +2,7 @@ import {useEffect, useState} from "react";
 import React from "react";
 import ListItem from "./ListItem.js"
 import "./List.css"
+import {BrowserRouter, Route, Routes, Link} from "react-router-dom";
 
 function List(props){
     
@@ -19,6 +20,9 @@ return( <>
         <p>
             <input type="text" id="search" placeholder="Enter Site..."/>
             <button onClick = {displayVal}>Enter</button>
+        </p>
+        <p>
+            <button id="favButton" type="button"><Link to={`/favorites`}>Favorites</Link></button>
         </p>
       </header>
     <ul>

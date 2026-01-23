@@ -5,6 +5,8 @@ import List from "./List.js"
 import {BrowserRouter, Route, Routes, Link} from "react-router-dom";
 import SiteDetails from "./SiteDetails.js"
 import "./List.css"
+import Testing from "./Testing.js"
+import FavoritesPage from "./FavoritesPage.js"
 
 function App() {
   const [sites, setSites] = useState([{}]);
@@ -30,6 +32,8 @@ function App() {
         <Routes>
             <Route path = "/" element={<List sites={sites} setSitesCopy = {setSitesCopy} sitesCopy ={sitesCopy}/>}/>
             <Route path = "/site/:SiteID" element={<SiteDetails sites = {sites} />}/>
+            <Route path= "/test" element={<Testing />} />
+            <Route path= "/favorites" element={<FavoritesPage />} />
         </Routes>
         
       </BrowserRouter>

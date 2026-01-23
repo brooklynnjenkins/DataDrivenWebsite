@@ -59,6 +59,9 @@ button{
     width: 60px;
     font-size: 12pt;
 }
+#favButton{
+    width: 100px;
+}
 #ending{
     display: flex;
     gap: 10px;
