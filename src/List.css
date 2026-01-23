@@ -21,8 +21,7 @@ li{
 
 }
 img{
-    width: 450px;
-    height: auto;
+    height: 325px;
 }
 p{
     font-size: 16pt;
@@ -69,4 +68,14 @@ button{
 }
 #ending span{
     font-size: 18pt;
+}
+#savedButtons{
+    display:flex;
+    justify-content: center;
+    width: 100%;
+    text-align: center;
+    gap: 15px;
+}
+#savedButtons button{
+    width:150px;
 }

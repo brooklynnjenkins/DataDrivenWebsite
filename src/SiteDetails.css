@@ -6,7 +6,7 @@
     font-weight: bold;
 }
 .siteBox img{
-    width: 40%;
+    height: 450px;
 }
 .siteBox{
     background-image: url('/public/imgs/cloud.jpg');

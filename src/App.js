@@ -9,7 +9,7 @@ import Testing from "./Testing.js"
 import FavoritesPage from "./FavoritesPage.js"
 
 function App() {
-  const [sites, setSites] = useState([{}]);
+  const [sites, setSites] = useState([]);
   const [sitesCopy, setSitesCopy] = useState(sites);
 
   useEffect(() => {
@@ -33,7 +33,7 @@ function App() {
             <Route path = "/" element={<List sites={sites} setSitesCopy = {setSitesCopy} sitesCopy ={sitesCopy}/>}/>
             <Route path = "/site/:SiteID" element={<SiteDetails sites = {sites} />}/>
             <Route path= "/test" element={<Testing />} />
-            <Route path= "/favorites" element={<FavoritesPage />} />
+            <Route path= "/favorites" element={<FavoritesPage sites={sites} setSitesCopy = {setSitesCopy} sitesCopy ={sitesCopy}/>} />
         </Routes>
         
       </BrowserRouter>
