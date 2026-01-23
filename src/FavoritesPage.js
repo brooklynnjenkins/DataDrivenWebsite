@@ -6,10 +6,13 @@ import {useEffect, useState} from "react";
 function FavoritesPage(props){
     const[index, setIndex] = useState(true);
     const storedFavorites = localStorage.getItem('favorites');
+    const favoritesArray = props.sites.filter(site => favorites.includes(site.SiteID));
     const [favorites, setFavorites] = useState(storedFavorites? JSON.parse(storedFavorites) : []);
-    let favoritesArray = [];
-    const [favoritesCopy, setFavoritesCopy] = useState(favoritesArray)
+    const [favoritesCopy, setFavoritesCopy] = useState([])
     console.log(props.sites);
+    useEffect(() => {
+      setFavoritesCopy(favoritesArray);
+    }, [favoritesArray]);
     function sorting(){
         if(index){
             let copy=[...favoritesCopy]
@@ -22,13 +25,6 @@ function FavoritesPage(props){
             copy.sort((a,b) => b.Site.localeCompare(a.Site));
             setIndex(true);
             setFavoritesCopy(copy)
-        }
-    }
-    for(let i=0; i<props.sites.length; i++){
-        for(let j=0; j<favorites.length; j++){
-            if(props.sites[i].SiteID == favorites[j]){
-                favoritesArray.push(props.sites[i]);
-            }
         }
     }
     return( <>  
