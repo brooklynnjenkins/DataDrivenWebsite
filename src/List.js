@@ -9,16 +9,22 @@ function List(props){
 function displayVal(){
   const searchInput = document.getElementById('search');
   const value = searchInput.value.toLowerCase();
-  let copy = [...props.sites];
-  copy = copy.filter(site => site.Site.toLowerCase().includes(value));
-  props.setSitesCopy(copy);
+  if(value!=""){
+    let copy = [...props.sites];
+    copy = copy.filter(site => site.Site.toLowerCase().includes(value));
+    props.setSitesCopy(copy);
+  } else{
+    props.setSitesCopy(props.sites);
+  }
 }
+
 return( <>
     
     <header>
         <h1>Boyle County Sites</h1>
         <p>
-            <input type="text" id="search" placeholder="Enter Site..."/>
+            <input onKeyUp={(e) => {if(e.key === 'Enter') {
+                displayVal();}}} type="text" id="search" placeholder="Enter Site..."/>
             <button onClick = {displayVal}>Enter</button>
         </p>
         <p>

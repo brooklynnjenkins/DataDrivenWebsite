@@ -8,16 +8,7 @@ function SiteDetails(props){
     const site = props.sites.find(s=> s.SiteID == SiteID);
     const storedFavorites = localStorage.getItem('favorites');
     const [favorites, setFavorites] = useState(storedFavorites? JSON.parse(storedFavorites) : []);
-
-    /*function toggleColor() {
-        if(element.style.color === "black"){
-            element.style.color = "yellow";
-        }else{
-            element.style.color = "black";
-        }
-    } */
     
-
     useEffect(() => {
         localStorage.setItem('favorites', JSON.stringify(favorites));
         console.log(localStorage)
@@ -38,6 +29,13 @@ function SiteDetails(props){
             setFavorites([]);
         }
     }, []); 
+    function toggleFavorite() {
+        if(favorites.includes(site.SiteID)){
+            setFavorites(favorites.filter(id => id !== site.SiteID));
+        }else{
+            setFavorites([...favorites, site.SiteID]);
+        }
+    }     
     if(site) {
         return( <>
             <div class="siteBox">
@@ -48,7 +46,7 @@ function SiteDetails(props){
                     <p id="cords">Latitude: {site.Latitude}, Longitude: {site.Longitude}</p>
                     <p id="ending">
                         <Link to={`/`}>All Sites</Link> 
-                        <span id="addButton" onClick={() => setFavorites([...favorites, site.SiteID])} type="button">&#9733;</span> 
+                        <span className={favorites.includes(site.SiteID) ? "starFav" : "star"} id="addButton" onClick={toggleFavorite} type="button">&#9733;</span> 
                     </p>
                 </div>
             </div>
