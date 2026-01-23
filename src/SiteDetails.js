@@ -39,7 +39,7 @@ function SiteDetails(props){
                     <p id="cords">Latitude: {site.Latitude}, Longitude: {site.Longitude}</p>
                     <p id="ending">
                         <Link to={`/`}>All Sites</Link> 
-                        <span onClick={() => setFavorites([...favorites, site.Site])} type="button">&#9733;</span> 
+                        <span onClick={() => setFavorites([...favorites, site.SiteID])} type="button">&#9733;</span> 
                     </p>
                 </div>
             </div>
