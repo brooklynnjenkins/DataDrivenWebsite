@@ -21,7 +21,7 @@ function displayVal(){
 return( <>
     
     <header>
-        <h1>Boyle County Sites</h1>
+        <h1>Boyle County Historical Sites</h1>
         <p>
             <input onKeyUp={(e) => {if(e.key === 'Enter') {
                 displayVal();}}} type="text" id="search" placeholder="Enter Site..."/>

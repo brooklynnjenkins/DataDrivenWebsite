@@ -36,6 +36,7 @@ header{
     background-color: rgb(59, 101, 165);
     height: 200px;
     margin:0px;
+    width: 100vw;
 }
 h1{
     margin: 0px;
