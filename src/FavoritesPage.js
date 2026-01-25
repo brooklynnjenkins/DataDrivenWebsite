@@ -39,8 +39,8 @@ function FavoritesPage(props){
     <header>
         <h1>Your Saved Sites</h1>
         <p id="savedButtons">
-            <button><Link to={`/`}>All Sites</Link></button>
-            <button onClick={sorting}>Alpabetical Sort</button>
+            <Link to={`/`}><button>All Sites</button></Link>
+            <button onClick={sorting}>Alphabetical Sort</button>
         </p>
       </header>
     <ul>

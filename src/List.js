@@ -28,7 +28,7 @@ return( <>
             <button onClick = {displayVal}>Enter</button>
         </p>
         <p>
-            <button id="favButton" type="button"><Link to={`/favorites`}>Favorites</Link></button>
+           <Link to={`/favorites`}> <button id="favButton" type="button">Favorites</button></Link>
         </p>
       </header>
     <ul>

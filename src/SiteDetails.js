@@ -8,7 +8,22 @@ function SiteDetails(props){
     const site = props.sites.find(s=> s.SiteID == SiteID);
     const storedFavorites = localStorage.getItem('favorites');
     const [favorites, setFavorites] = useState(storedFavorites? JSON.parse(storedFavorites) : []);
-    
+    const [isClicked, setIsClicked] = useState(false);
+    const [isClickedAgain, setIsClickedAgain] = useState(false);
+
+    useEffect(() => {
+    if (isClicked) {
+        const timer = setTimeout(() => {setIsClicked(false);}, 300);
+        return () => clearTimeout(timer);
+        }
+    }, [isClicked]);
+    useEffect(() => {
+    if (isClickedAgain) {
+        const timer = setTimeout(() => {setIsClickedAgain(false);}, 300);
+        return () => clearTimeout(timer);
+        }
+    }, [isClickedAgain]);
+
     useEffect(() => {
         localStorage.setItem('favorites', JSON.stringify(favorites));
         console.log(localStorage)
@@ -32,8 +47,10 @@ function SiteDetails(props){
     function toggleFavorite() {
         if(favorites.includes(site.SiteID)){
             setFavorites(favorites.filter(id => id !== site.SiteID));
+            setIsClickedAgain(true);
         }else{
             setFavorites([...favorites, site.SiteID]);
+            setIsClicked(true);
         }
     }     
     if(site) {
@@ -46,7 +63,7 @@ function SiteDetails(props){
                     <p id="cords">Latitude: {site.Latitude}, Longitude: {site.Longitude}</p>
                     <p id="ending">
                         <Link to={`/`}>All Sites</Link> 
-                        <span className={favorites.includes(site.SiteID) ? "starFav" : "star"} id="addButton" onClick={toggleFavorite} type="button">&#9733;</span> 
+                        <span className={`${favorites.includes(site.SiteID) ? "starFav" : "star"} ${isClicked ? 'scaleUp' : ''} ${isClickedAgain ? 'scaleDown' : ''}`} id="addButton" onClick={toggleFavorite} type="button">&#9733;</span> 
                     </p>
                 </div>
             </div>

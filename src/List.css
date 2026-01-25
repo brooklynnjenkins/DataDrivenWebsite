@@ -10,15 +10,7 @@ ul{
     gap: 50px;
 }
 li{
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    flex-wrap: wrap;
-    width: 80%;
     flex-basis: 25%;
-    gap: 50px;
-    justify-content: center;
-
 }
 img{
     height: 325px;
@@ -36,7 +28,7 @@ header{
     background-color: rgb(59, 101, 165);
     height: 200px;
     margin:0px;
-    width: 100vw;
+    max-width: 100%;
 }
 h1{
     margin: 0px;
@@ -67,7 +59,6 @@ button{
     gap: 15px;
     justify-content: center;
     align-items: center;
-
 }
 #ending span{
     font-size: 24pt;
@@ -86,20 +77,19 @@ button{
     color:black;
     cursor:pointer;
 }
-.star:active{
-    animation: scalingUp 150ms linear;
+.scaleUp{
+    animation: scalingUp 300ms linear;
 }
 .starFav{
     color:gold;
     cursor: pointer;
 }
-.starFav:active{
-    animation: scalingDown 125ms linear;
-    color:black;
+.scaleDown{
+    animation: scalingDown 300ms linear;
 }
 @keyframes scalingUp {
     0% {transform: scale(1.00)}
-    50% {transform: scale(1.25)}
+    50% {transform: scale(1.50)}
     100% {transform: scale(1.00)}
 }
 @keyframes scalingDown{
