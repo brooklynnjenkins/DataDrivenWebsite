@@ -57,7 +57,7 @@ function SiteDetails(props){
         return( <>
             <div class="siteBox">
                 <div>
-                    <img src={`/imgs/${site.Image}`} alt = "Picture of site"/>
+                    <img src={`/imgs/${site.Image}`} alt = {`${site.Site} Picture`}/>
                     <h2>{site.Site}</h2>
                     <p>{site.Description}</p>
                     <p id="cords">Latitude: {site.Latitude}, Longitude: {site.Longitude}</p>

@@ -5,27 +5,26 @@ import "./List.css"
 import {BrowserRouter, Route, Routes, Link} from "react-router-dom";
 
 function List(props){
-    
-function displayVal(){
-  const searchInput = document.getElementById('search');
-  const value = searchInput.value.toLowerCase();
-  if(value!=""){
-    let copy = [...props.sites];
-    copy = copy.filter(site => site.Site.toLowerCase().includes(value));
-    props.setSitesCopy(copy);
-  } else{
-    props.setSitesCopy(props.sites);
-  }
-}
+const [search, setSearch] = useState("");
+
+  useEffect(() => {
+    if (search === "") {
+      props.setSitesCopy(props.sites);
+    } else {
+      const filtered = props.sites.filter(site =>
+        site.Site.toLowerCase().includes(search.toLowerCase())
+      );
+      props.setSitesCopy(filtered);
+    }
+  }, [search, props.sites]);
 
 return( <>
     
     <header>
         <h1>Boyle County Historical Sites</h1>
         <p>
-            <input onKeyUp={(e) => {if(e.key === 'Enter') {
-                displayVal();}}} type="text" id="search" placeholder="Enter Site..."/>
-            <button onClick = {displayVal}>Enter</button>
+            <input onChange={(e) => setSearch(e.target.value)}
+               type="text" id="search" placeholder="Search for a Site..."/>
         </p>
         <p>
            <Link to={`/favorites`}> <button id="favButton" type="button">Favorites</button></Link>

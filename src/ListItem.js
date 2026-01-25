@@ -5,7 +5,9 @@ function ListItem(props){
 
     return(
         <li>
-            <img src={`imgs/${props.site.Image}`} alt = "Picture"/>
+            <Link to={`/site/${props.site.SiteID}`}> 
+                <img src={`imgs/${props.site.Image}`} alt = {`${props.site.Site} Picture`}/>
+            </Link>
             <section>
                 <h2>
                     <Link to={`/site/${props.site.SiteID}`}> 
