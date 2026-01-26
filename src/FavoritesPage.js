@@ -34,9 +34,11 @@ function FavoritesPage(props){
             <button onClick={sorting}>Alphabetical Sort</button>
         </p>
     </header>
-    <ul>
-        {favoritesCopy.map(favorite => <ListItem key={favorite.SiteID} site={favorite}/>)}
-    </ul>
+    <div class="siteBox">
+        <ul>
+            {favoritesCopy.map(favorite => <ListItem key={favorite.SiteID} site={favorite}/>)}
+        </ul>
+    </div>
 </>);
 
 }

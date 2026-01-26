@@ -4,24 +4,27 @@ ul{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    align-items: stretch;
+    align-items: center;
     flex-direction: row;
     margin: 200px 20px;
     gap: 50px;
-    padding: 25px;
+    padding: 50px 0px;
     border-radius: 5px;
+    background-color: rgba(224, 242, 254);
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 li{
-    flex-basis: 15%;
-    height: 350px;
-}
-ul div{
-    max-width: 400px;
+    height: 450px;
+    width: 400px;
 }
 .siteBox li img{
     width: 100%;
-    height: 250px;
+    height: 350px;
     object-fit: cover;
+}
+.siteBox li img:hover{
+    width: 102%;
+    height: 365px;
 }
 p{
     font-size: 16pt;
@@ -32,13 +35,20 @@ a:visited{
 a{
     color: rgb(59, 101, 165);
 }
+.App{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0px;
+    padding: 0px;
+}
 header{
     top:0px;
     left:0px;
     position:absolute;
     background-image: linear-gradient(rgba(14, 20, 84, 0.8) 100%);
     margin:0px;
-    max-width: 100%;
     min-width: 100%;
     padding: 5px;
 }
@@ -69,12 +79,14 @@ button{
 #savedButtons{
     display:flex;
     justify-content: center;
+    align-items: center;
     width: 100%;
     text-align: center;
     gap: 15px;
 }
 #savedButtons button{
     width:150px;
+    height:25px;
 }
 .star{
     color:black;
@@ -99,4 +111,53 @@ button{
     0% {transform: scale(1.00)}
     25%{transform: scale(.05)}
     100%{transform: scale(1.00)}
+}
+.siteBox h2{
+    color: rgb(2, 57, 139);
+    font-size: 23pt;
+}
+#cords{
+    font-weight: bold;
+}
+.detailsPic{
+    height: 400px;
+    width: auto;
+    max-height: 100%;
+    max-width: 100%;
+    display: inline-block;
+}
+.siteBox img{
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}  
+.siteBox{
+    background-image: url('/public/imgs/cloud.jpg');
+    background-size: cover;
+    background-position: bottom;
+    padding: 60px 100px;
+    padding-bottom: 100px;
+    min-width: 800px;
+    background-attachment: fixed;
+    min-height: 100vh;
+}
+.siteBox div{
+    background-color: rgba(224, 242, 254);
+    padding: 25px;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.siteBox p{
+    padding: 0px 5%;
+    color: rgba(6, 1, 66);
+}
+#ending{
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+}
+#ending span{
+    font-size: 24pt;
+}
+#cords{
+    color: rgb(2, 57, 139);
 }

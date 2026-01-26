@@ -1,6 +1,5 @@
 import React from "react";
 import {BrowserRouter, Route, Routes, Link, useParams} from "react-router-dom";
-import "./SiteDetails.css"
 import {useEffect, useState} from "react";
 
 function SiteDetails(props){
@@ -55,7 +54,7 @@ function SiteDetails(props){
     }     
     if(site) {
         return( <>
-            <div class="siteBox">
+            <div id="details" class="siteBox">
                 <div>
                     <img class="detailsPic" src={`/imgs/${site.Image}`} alt = {`${site.Site} Picture`}/>
                     <h2>{site.Site}</h2>
