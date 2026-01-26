@@ -30,9 +30,11 @@ return( <>
            <Link to={`/favorites`}> <button id="favButton" type="button">Favorites</button></Link>
         </p>
       </header>
-    <ul>
-        {props.sitesCopy.map(site => <ListItem key={site.SiteID} site ={site} />)}
-    </ul>
+    <div class="siteBox">
+      <ul>
+          {props.sitesCopy.map(site => <ListItem key={site.SiteID} site ={site} />)}
+      </ul>
+    </div>
 </>);
 
 }

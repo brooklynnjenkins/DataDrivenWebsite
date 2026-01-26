@@ -33,7 +33,7 @@ function FavoritesPage(props){
             <Link to={`/`}><button>All Sites</button></Link>
             <button onClick={sorting}>Alphabetical Sort</button>
         </p>
-      </header>
+    </header>
     <ul>
         {favoritesCopy.map(favorite => <ListItem key={favorite.SiteID} site={favorite}/>)}
     </ul>

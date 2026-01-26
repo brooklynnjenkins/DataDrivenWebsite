@@ -6,13 +6,17 @@ ul{
     justify-content: center;
     align-items: center;
     flex-direction: row;
-    margin: 2% 10%;
+    margin: 200px 10%;
     gap: 50px;
+    background-color: rgba(224, 242, 254);
+    padding: 25px;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 li{
     flex-basis: 25%;
 }
-img{
+.siteBox li img{
     height: 325px;
 }
 p{
@@ -25,9 +29,13 @@ a{
     color: rgb(59, 101, 165);
 }
 header{
-    background-color: rgb(59, 101, 165);
+    top:0px;
+    left:0px;
+    position:absolute;
+    background-image: linear-gradient(rgba(14, 20, 84, 0.8) 100%);
     margin:0px;
     max-width: 100%;
+    min-width: 100%;
     padding: 5px;
 }
 h1{
@@ -54,15 +62,6 @@ button{
 #favButton{
     width: 100px;
 }
-#ending{
-    display: flex;
-    gap: 15px;
-    justify-content: center;
-    align-items: center;
-}
-#ending span{
-    font-size: 24pt;
-}
 #savedButtons{
     display:flex;
     justify-content: center;
@@ -81,7 +80,7 @@ button{
     animation: scalingUp 300ms linear;
 }
 .starFav{
-    color:gold;
+    color:rgb(236, 193, 0);
     cursor: pointer;
 }
 .scaleDown{

@@ -1,29 +1,50 @@
 .siteBox h2{
-    color:rgb(59, 101, 165);
+    color: rgb(2, 57, 139);
     font-size: 23pt;
 }
 #cords{
     font-weight: bold;
 }
-.siteBox img{
+.detailsPic{
+    height: 400px;
+    width: auto;
     max-height: 100%;
     max-width: 100%;
     display: inline-block;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
 .siteBox{
     background-image: url('/public/imgs/cloud.jpg');
-    background-size: 100% 120%;
+    background-size: cover;
+    background-position: bottom;
     padding: 60px 100px;
     padding-bottom: 100px;
-    height: 100vh;
+    min-width: 800px;
+    background-attachment: fixed;
+    min-height: 100vh;
 }
 .siteBox div{
-    background-color: white;
+    background-color: rgba(224, 242, 254);
     padding: 25px;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 #noID{
     margin-top: 220px;
 }
 .siteBox p{
     padding: 0px 5%;
+    color: rgba(6, 1, 66);
+}
+#ending{
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+}
+#ending span{
+    font-size: 24pt;
+}
+#cords{
+    color: rgb(2, 57, 139);
 }
